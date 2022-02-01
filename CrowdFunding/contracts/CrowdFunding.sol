@@ -91,7 +91,7 @@ contract CrowdFunding {
         require(msg.value > 0, "Not enough ether sent");
         require(
             fundRaiserAdded[_id],
-            "This Id does not exist in the fund raisers list"
+            "This Id does not exist in the fundraisers list"
         );
         FundRaiser storage _fund = fundRaisers[_id];
         _fund.balance += msg.value;
@@ -109,7 +109,7 @@ contract CrowdFunding {
     function redeemFunds(uint256 _fundRaiserId, uint256 amount) external {
         require(
             fundRaiserAdded[_fundRaiserId],
-            "This Id does not exist in the fund raiser list"
+            "This Id does not exist in the fundraisers list"
         );
         FundRaiser storage _fund = fundRaisers[_fundRaiserId];
         require(
